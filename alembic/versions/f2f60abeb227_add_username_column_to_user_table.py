@@ -18,7 +18,7 @@ depends_on = None
 
 def upgrade():
     op.add_column('Users', sa.Column(
-        'username', sa.Boolean(), nullable=False), )
+        'username', sa.String(), nullable=False), )
     pass
 
 
