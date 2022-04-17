@@ -2,3 +2,4 @@ __pycache__
 venv_api_dev/
 env
 .idea/
+docker-compose dev.yml
