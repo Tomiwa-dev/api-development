@@ -1,0 +1,29 @@
+version: "3"
+services:
+  api:
+      image: # image name in docker hub
+      container_name: fastapi
+      depends_on:
+        - postgres
+      ports:
+        - "8000:8000"
+      environment:
+        - DATABASE_HOSTNAME = ${DATABASE_HOSTNAME} # environment variable saved on the linux machine
+        - DATABASE_PASSWORD = ${DATABASE_PASSWORD}
+        - DATABASE_PORT = ${DATABASE_PORT}
+        - DATABASE_NAME = ${DATABASE_NAME}
+        - DATABASE_USERNAME = ${DATABASE_USERNAME}
+        - SECRET_KEY = ${SECRET_KEY}
+        - ALGORITHM = ${ALGORITHM}
+        - ACCESS_TOKEN_EXPIRE_MINUTES = ${ACCESS_TOKEN_EXPIRE_MINUTES}
+  postgres:
+      image: postgres
+      environment:
+        - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+        - POSTGRES_DB=${DATABASE_NAME}
+      volumes:
+        - ./postgres:/var/lib/postgresql/data
+      ports:
+        - "5432:5432"
+volumes:
+  postgres:
