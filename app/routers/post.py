@@ -23,7 +23,7 @@ def get_posts(db: Session = Depends(get_db), limit: int = 10, skip: int = 0, sea
         model.Votes, model.Votes.post_id == model.Posts.id, isouter=True).group_by(model.Posts.id).filter(
         model.Posts.title.contains(search)).limit(limit).offset(skip).all()
     # to get posts and total number of posts
-    return result
+    return post
 
 
 @router.post('/sqlalchemy', status_code=status.HTTP_201_CREATED, response_model=schema.PostResponse)

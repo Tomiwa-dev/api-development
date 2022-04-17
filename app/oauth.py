@@ -1,4 +1,4 @@
-from jose import JWTError, jwt # to authnticate users
+from jose import JWTError, jwt  # to authnticate users
 from datetime import datetime, timedelta
 from app import schema,  model
 from app.database import get_db

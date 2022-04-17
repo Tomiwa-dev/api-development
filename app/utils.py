@@ -8,4 +8,4 @@ def hash(password: str):   # to hash passwords
 
 
 def verify(plain_password, hashed_password):
-    return pwd_context.verify(plain_password, hashed_password)  # used to verify password user eenters when trying to login
+    return pwd_context.verify(plain_password, hashed_password)  # used to verify password user enters when trying to login
