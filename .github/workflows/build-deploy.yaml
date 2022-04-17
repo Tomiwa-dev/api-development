@@ -3,18 +3,19 @@ name: Build and Deploy Code
 on: [push,pull_request]
 
 jobs:
-  runs-on: ubuntu-latest
-  steps:
-    - name: pulling git repository
-      uses: actions/checkout@v3
-    - name: Install python3 and pip3
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.9'
-    - name: Install requirements
-      run: pip3 install -r requirements.txt
-    - name: install pytest and run tests
-      run: |
-        pip3 install pytest
-        pytest -v
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: pulling git repository
+        uses: actions/checkout@v3
+      - name: Install python3 and pip3
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+      - name: Install requirements
+        run: pip3 install -r requirements.txt
+      - name: install pytest and run tests
+        run: |
+          pip3 install pytest
+          pytest -v
 
