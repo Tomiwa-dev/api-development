@@ -30,7 +30,7 @@ app.include_router(votes.router)
 
 @app.get("/")
 def root():
-    return {"message":"APP IS WORKING."}
+    return {"message":"APP IS WORKING. WELCOME TO FAST ORM"}
 
 
 

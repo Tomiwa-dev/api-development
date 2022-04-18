@@ -65,10 +65,7 @@ jobs:
     runs-on: ubuntu-latest
     need: [build]
     steps:
-      - name: pulling git repository
-        uses: actions/checkout@v3
-      - name: deploying to heroku
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
       with:
         heroku_api_key: ${{secrets.HEROKU_API_KEY}}
