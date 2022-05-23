@@ -14,7 +14,7 @@ origins = ["*"]  # domains that can interact with our api "*" all domains
 
 app.add_middleware(
     CORSMiddleware,
-   allow_origins=origins,
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -30,7 +30,7 @@ app.include_router(votes.router)
 
 @app.get("/")
 def root():
-    return {"message":"APP IS WORKING. WELCOME TO FAST ORM"}
+    return {"message": "APP IS WORKING. WELCOME TO FAST ORM"}
 
 
 
