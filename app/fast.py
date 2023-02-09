@@ -46,7 +46,7 @@ def find_index(id):
 #path operation
 @app.get("/") #decorator
 async def root():
-    return {"message": "Tomiwa Built this webpage bitches. Welcome to my World. Pay me "}
+    return {"message": "Hello World"}
 
 
 @app.get('/posts')
